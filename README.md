@@ -1,6 +1,8 @@
 # 🐾 Balita Belajar — Aplikasi Interaktif Belajar Hewan & Warna untuk Balita 🎨
 
-Aplikasi web interaktif yang dirancang khusus untuk anak-anak balita (usia 1–4 tahun) untuk belajar mengenal berbagai jenis hewan dan warna dengan cara yang menyenangkan, ramah anak, dan mudah digunakan!
+Situs web interaktif yang dirancang khusus untuk anak-anak balita (usia 1–4 tahun) untuk belajar mengenal berbagai jenis hewan dan warna dengan cara yang menyenangkan, ramah anak, dan mudah digunakan!
+
+🌐 **Live Demo Website**: [https://ab2rahman.github.io/BalitaBelajar/](https://ab2rahman.github.io/BalitaBelajar/)
 
 ---
 
@@ -39,11 +41,8 @@ Aplikasi web interaktif yang dirancang khusus untuk anak-anak balita (usia 1–4
 
 ## 🌐 Hosting di GitHub Pages
 
-Aplikasi ini 100% statis dan siap di-host langsung melalui **GitHub Pages**:
-1. Buka tab **Settings** pada repository GitHub Anda.
-2. Masuk ke menu **Pages**.
-3. Pilih **Source**: `Deploy from a branch` -> Branch: `main` / `root`.
-4. Klik **Save**, dan situs web interaktif Balita Belajar akan aktif secara otomatis!
+Aplikasi ini 100% statis dan di-host langsung melalui **GitHub Pages**:
+[https://ab2rahman.github.io/BalitaBelajar/](https://ab2rahman.github.io/BalitaBelajar/)
 
 ---
 
