@@ -1,7 +1,8 @@
 /**
  * Balita Belajar - Translation Data
  * Supports: Indonesian (id), English (en), Arabic (ar)
- * 12 Animal variations with transparent PNG cartoon illustrations & real audio sound recordings.
+ * 20 Animal variations with transparent PNG cartoon illustrations & real audio sound recordings.
+ * 10 Color variations including Black (#2B2D42) and White (#FFFFFF).
  */
 
 const TRANSLATIONS = {
@@ -28,7 +29,15 @@ const TRANSLATIONS = {
       { id: 'kambing', name: 'Kambing', sound: 'Kambing', image: 'images/kambing.png' },
       { id: 'kuda', name: 'Kuda', sound: 'Kuda', image: 'images/kuda.png' },
       { id: 'monyet', name: 'Monyet', sound: 'Monyet', image: 'images/monyet.png' },
-      { id: 'burung', name: 'Burung', sound: 'Burung', image: 'images/burung.png' }
+      { id: 'burung', name: 'Burung', sound: 'Burung', image: 'images/burung.png' },
+      { id: 'kelinci', name: 'Kelinci', sound: 'Kelinci', image: 'images/kelinci.png' },
+      { id: 'beruang', name: 'Beruang', sound: 'Beruang', image: 'images/beruang.png' },
+      { id: 'panda', name: 'Panda', sound: 'Panda', image: 'images/panda.png' },
+      { id: 'jerapah', name: 'Jerapah', sound: 'Jerapah', image: 'images/jerapah.png' },
+      { id: 'katak', name: 'Katak', sound: 'Katak', image: 'images/katak.png' },
+      { id: 'lumba_lumba', name: 'Lumba-lumba', sound: 'Lumba-lumba', image: 'images/lumba_lumba.png' },
+      { id: 'serigala', name: 'Serigala', sound: 'Serigala', image: 'images/serigala.png' },
+      { id: 'burung_hantu', name: 'Burung Hantu', sound: 'Burung Hantu', image: 'images/burung_hantu.png' }
     ],
     colors_data: [
       { name: 'Merah', hex: '#FF6B6B', sound: 'Warna, Merah' },
@@ -38,7 +47,9 @@ const TRANSLATIONS = {
       { name: 'Oranye', hex: '#FFB347', sound: 'Warna, Oranye' },
       { name: 'Ungu', hex: '#C084FC', sound: 'Warna, Ungu' },
       { name: 'Pink', hex: '#F472B6', sound: 'Warna, Pink' },
-      { name: 'Coklat', hex: '#A0522D', sound: 'Warna, Cokelat' }
+      { name: 'Cokelat', hex: '#A0522D', sound: 'Warna, Cokelat' },
+      { name: 'Hitam', hex: '#2B2D42', sound: 'Warna, Hitam' },
+      { name: 'Putih', hex: '#FFFFFF', sound: 'Warna, Putih' }
     ]
   },
 
@@ -65,7 +76,15 @@ const TRANSLATIONS = {
       { id: 'kambing', name: 'Goat', sound: 'Goat', image: 'images/kambing.png' },
       { id: 'kuda', name: 'Horse', sound: 'Horse', image: 'images/kuda.png' },
       { id: 'monyet', name: 'Monkey', sound: 'Monkey', image: 'images/monyet.png' },
-      { id: 'burung', name: 'Bird', sound: 'Bird', image: 'images/burung.png' }
+      { id: 'burung', name: 'Bird', sound: 'Bird', image: 'images/burung.png' },
+      { id: 'kelinci', name: 'Rabbit', sound: 'Rabbit', image: 'images/kelinci.png' },
+      { id: 'beruang', name: 'Bear', sound: 'Bear', image: 'images/beruang.png' },
+      { id: 'panda', name: 'Panda', sound: 'Panda', image: 'images/panda.png' },
+      { id: 'jerapah', name: 'Giraffe', sound: 'Giraffe', image: 'images/jerapah.png' },
+      { id: 'katak', name: 'Frog', sound: 'Frog', image: 'images/katak.png' },
+      { id: 'lumba_lumba', name: 'Dolphin', sound: 'Dolphin', image: 'images/lumba_lumba.png' },
+      { id: 'serigala', name: 'Wolf', sound: 'Wolf', image: 'images/serigala.png' },
+      { id: 'burung_hantu', name: 'Owl', sound: 'Owl', image: 'images/burung_hantu.png' }
     ],
     colors_data: [
       { name: 'Red', hex: '#FF6B6B', sound: 'Color, Red' },
@@ -75,7 +94,9 @@ const TRANSLATIONS = {
       { name: 'Orange', hex: '#FFB347', sound: 'Color, Orange' },
       { name: 'Purple', hex: '#C084FC', sound: 'Color, Purple' },
       { name: 'Pink', hex: '#F472B6', sound: 'Color, Pink' },
-      { name: 'Brown', hex: '#A0522D', sound: 'Color, Brown' }
+      { name: 'Brown', hex: '#A0522D', sound: 'Color, Brown' },
+      { name: 'Black', hex: '#2B2D42', sound: 'Color, Black' },
+      { name: 'White', hex: '#FFFFFF', sound: 'Color, White' }
     ]
   },
 
@@ -102,7 +123,15 @@ const TRANSLATIONS = {
       { id: 'kambing', name: 'ماعز', sound: 'ماعز', image: 'images/kambing.png' },
       { id: 'kuda', name: 'حصان', sound: 'حصان', image: 'images/kuda.png' },
       { id: 'monyet', name: 'قرد', sound: 'قرد', image: 'images/monyet.png' },
-      { id: 'burung', name: 'طائر', sound: 'طائر', image: 'images/burung.png' }
+      { id: 'burung', name: 'طائر', sound: 'طائر', image: 'images/burung.png' },
+      { id: 'kelinci', name: 'أرنب', sound: 'أرنب', image: 'images/kelinci.png' },
+      { id: 'beruang', name: 'دب', sound: 'دب', image: 'images/beruang.png' },
+      { id: 'panda', name: 'باندا', sound: 'باندا', image: 'images/panda.png' },
+      { id: 'jerapah', name: 'زرافة', sound: 'زرافة', image: 'images/jerapah.png' },
+      { id: 'katak', name: 'ضفدع', sound: 'ضفدع', image: 'images/katak.png' },
+      { id: 'lumba_lumba', name: 'دلفين', sound: 'دلفين', image: 'images/lumba_lumba.png' },
+      { id: 'serigala', name: 'ذئب', sound: 'ذئب', image: 'images/serigala.png' },
+      { id: 'burung_hantu', name: 'بومة', sound: 'بومة', image: 'images/burung_hantu.png' }
     ],
     colors_data: [
       { name: 'أحمر', hex: '#FF6B6B', sound: 'لون، أحمر' },
@@ -112,7 +141,9 @@ const TRANSLATIONS = {
       { name: 'برتقالي', hex: '#FFB347', sound: 'لون، برتقالي' },
       { name: 'بنفسجي', hex: '#C084FC', sound: 'لون، بنفسجي' },
       { name: 'وردي', hex: '#F472B6', sound: 'لون، وردي' },
-      { name: 'بني', hex: '#A0522D', sound: 'لون، بني' }
+      { name: 'بني', hex: '#A0522D', sound: 'لون، بني' },
+      { name: 'أسود', hex: '#2B2D42', sound: 'لون، أسود' },
+      { name: 'أبيض', hex: '#FFFFFF', sound: 'لون، أبيض' }
     ]
   }
 };
