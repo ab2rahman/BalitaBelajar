@@ -743,54 +743,7 @@ body {
   100% { transform: scale(1) translateY(0) rotate(0deg); }
 }
 
-/* Video Progress Bar */
-.video-progress-bar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 8px;
-  background: rgba(255, 255, 255, 0.3);
-  z-index: 3;
-}
 
-.video-progress-fill {
-  height: 100%;
-  width: 0%;
-  background: #FFD93D;
-  border-radius: 0 4px 4px 0;
-  box-shadow: 0 0 10px #FFD93D;
-}
-
-/* Play Video Button */
-.video-controls {
-  margin-top: 14px;
-}
-
-.play-video-btn {
-  background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
-  color: #FFFFFF;
-  font-size: 1.25rem;
-  font-weight: 900;
-  padding: 12px 26px;
-  border: 4px solid #FFFFFF;
-  border-radius: 50px;
-  cursor: pointer;
-  box-shadow: 0 8px 24px rgba(255, 107, 107, 0.4);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.play-video-btn:hover {
-  transform: scale(1.06);
-  box-shadow: 0 12px 30px rgba(255, 107, 107, 0.6);
-}
-
-.play-video-btn:active {
-  transform: scale(0.96);
-}
 
 /* ── Disable animations for users who prefer reduced motion ── */
 @media (prefers-reduced-motion: reduce) {
