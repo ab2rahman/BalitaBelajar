@@ -18,7 +18,7 @@ const TRANSLATIONS = {
     speechLang: 'id-ID',
     flag: '🇮🇩',
     animals_data: [
-      { id: 'kucing', name: 'Kucing', sound: 'Kucing', image: 'images/kucing.jpg' },
+      { id: 'kucing', name: 'Kucing', sound: 'Kucing', image: 'images/kucing.jpg', video: 'videos/kucing.mp4' },
       { id: 'anjing', name: 'Anjing', sound: 'Anjing', image: 'images/anjing.jpg' },
       { id: 'sapi', name: 'Sapi', sound: 'Sapi', image: 'images/sapi.jpg' },
       { id: 'ayam', name: 'Ayam', sound: 'Ayam', image: 'images/ayam.jpg' },
@@ -65,7 +65,7 @@ const TRANSLATIONS = {
     speechLang: 'en-US',
     flag: '🇬🇧',
     animals_data: [
-      { id: 'kucing', name: 'Cat', sound: 'Cat', image: 'images/kucing.jpg' },
+      { id: 'kucing', name: 'Cat', sound: 'Cat', image: 'images/kucing.jpg', video: 'videos/kucing.mp4' },
       { id: 'anjing', name: 'Dog', sound: 'Dog', image: 'images/anjing.jpg' },
       { id: 'sapi', name: 'Cow', sound: 'Cow', image: 'images/sapi.jpg' },
       { id: 'ayam', name: 'Chicken', sound: 'Chicken', image: 'images/ayam.jpg' },
@@ -112,7 +112,7 @@ const TRANSLATIONS = {
     speechLang: 'ar-SA',
     flag: '🇸🇦',
     animals_data: [
-      { id: 'kucing', name: 'قطة', sound: 'قطة', image: 'images/kucing.jpg' },
+      { id: 'kucing', name: 'قطة', sound: 'قطة', image: 'images/kucing.jpg', video: 'videos/kucing.mp4' },
       { id: 'anjing', name: 'كلب', sound: 'كلب', image: 'images/anjing.jpg' },
       { id: 'sapi', name: 'بقرة', sound: 'بقرة', image: 'images/sapi.jpg' },
       { id: 'ayam', name: 'دجاجة', sound: 'دجاجة', image: 'images/ayam.jpg' },

@@ -1,6 +1,6 @@
 /**
- * Balita Belajar - Animal Flashcard & 5-Second Video Logic
- * Renders animal cards and handles 5-second animated video playback with environment backgrounds
+ * Balita Belajar - Animal Flashcard & Real MP4 Video Logic
+ * Renders animal cards and handles real 5-second MP4 video playback & environment stages
  */
 
 function renderCards() {
@@ -60,12 +60,26 @@ function getEnvironmentTheme(animalId) {
 function handleAnimalClick(cardEl, animal) {
   var envClass = getEnvironmentTheme(animal.id);
 
+  var mediaHTML = '';
+  if (animal.video) {
+    mediaHTML = `
+      <video id="real-video-${animal.id}" class="real-animal-video" playsinline preload="auto" muted>
+        <source src="${animal.video}" type="video/mp4">
+      </video>
+      <img src="${animal.image}" alt="${animal.name}" class="animal-video-img poster-fallback" id="animal-img-${animal.id}">
+    `;
+  } else {
+    mediaHTML = `
+      <img src="${animal.image}" alt="${animal.name}" class="animal-video-img" id="animal-img-${animal.id}">
+    `;
+  }
+
   // Show Pop-Up Modal with 5-second video container & play button (no auto-close)
   showModalHTML(`
     <div class="video-container ${envClass}" id="video-box-${animal.id}">
       <div class="video-environment-bg"></div>
       <div class="video-stage">
-        <img src="${animal.image}" alt="${animal.name}" class="animal-video-img" id="animal-img-${animal.id}">
+        ${mediaHTML}
       </div>
       <div class="video-progress-bar"><div class="video-progress-fill" id="progress-${animal.id}"></div></div>
     </div>
@@ -81,16 +95,15 @@ function handleAnimalClick(cardEl, animal) {
     <div class="modal-hint">👆 Ketuk di luar untuk menutup</div>
   `);
 
-  // Play animal sound when opened
-  playAnimalSound(animal.id, animal.sound);
-
-  // Auto trigger initial 5-second video animation
+  // Auto trigger initial 5-second video playback
   start5SecAnimalVideo(animal.id, animal.sound);
 }
 
 function start5SecAnimalVideo(animalId, speechText) {
   var videoBox = document.getElementById('video-box-' + animalId);
   var progressFill = document.getElementById('progress-' + animalId);
+  var realVideo = document.getElementById('real-video-' + animalId);
+  var animalImg = document.getElementById('animal-img-' + animalId);
 
   if (videoBox) {
     videoBox.classList.remove('playing-5s');
@@ -107,6 +120,20 @@ function start5SecAnimalVideo(animalId, speechText) {
     }, 50);
   }
 
+  // If real MP4 video is present, play video!
+  if (realVideo) {
+    if (animalImg) animalImg.style.display = 'none';
+    realVideo.style.display = 'block';
+    realVideo.currentTime = 0;
+    var p = realVideo.play();
+    if (p !== undefined) {
+      p.catch(function(err) {
+        console.log('Video play error:', err);
+        if (animalImg) animalImg.style.display = 'block';
+      });
+    }
+  }
+
   // Play real audio sound & speech
   playAnimalSound(animalId, speechText);
 
@@ -114,6 +141,9 @@ function start5SecAnimalVideo(animalId, speechText) {
   setTimeout(function() {
     if (videoBox) {
       videoBox.classList.remove('playing-5s');
+    }
+    if (realVideo) {
+      realVideo.pause();
     }
   }, 5000);
 }
