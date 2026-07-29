@@ -102,9 +102,11 @@ function getOrCreateModal() {
     </div>
   `;
 
-  // Tap anywhere on modal to close immediately & stop sound
-  modalEl.addEventListener('click', function() {
-    hideModal();
+  // Tap backdrop or close elements to close modal
+  modalEl.addEventListener('click', function(e) {
+    if (e.target.classList.contains('modal-backdrop') || e.target.closest('.modal-close-btn') || e.target.closest('.modal-hint')) {
+      hideModal();
+    }
   });
 
   document.body.appendChild(modalEl);
