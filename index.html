@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balita Belajar - Belajar Sambil Bermain!</title>
+    <meta name="description" content="Aplikasi belajar interaktif untuk balita. Belajar mengenal hewan dan warna dengan flashcard yang menyenangkan!">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="lang-picker" class="lang-picker">
+        <h1 id="lang-picker-title">Pilih Bahasa / Choose Language</h1>
+        <div class="lang-options">
+            <button class="lang-btn" data-lang="id">🇮🇩 Indonesia</button>
+            <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+            <button class="lang-btn" data-lang="ar" dir="rtl">🇸🇦 العربية</button>
+        </div>
+    </div>
+
+    <div id="main-menu" class="menu-container" style="display:none">
+        <div class="header">
+            <div id="lang-switch" class="lang-switch"></div>
+        </div>
+        
+        <div class="decorations">
+            <span class="floating-decoration">☁️</span>
+            <span class="floating-decoration">⭐</span>
+            <span class="floating-decoration">🌈</span>
+        </div>
+
+        <h1 id="greeting" class="greeting">Halo!</h1>
+        <p id="choose-text" class="subtitle">Mau belajar apa hari ini?</p>
+
+        <div class="menu-buttons">
+            <a href="hewan.html" id="btn-animals" class="menu-btn" style="background-color: #7BC67E;">Belajar Hewan</a>
+            <a href="warna.html" id="btn-colors" class="menu-btn" style="background-color: #FFB347;">Belajar Warna</a>
+        </div>
+    </div>
+
+    <script src="js/translations.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
