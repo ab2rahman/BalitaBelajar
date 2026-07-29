@@ -197,6 +197,13 @@ function playAnimalSound(animalId, speechText, onCompleteCallback) {
   function speakName() {
     if (hasSpoken) return;
     hasSpoken = true;
+    if (currentAudio) {
+      currentAudio.pause();
+    }
+    if (pendingSpeechTimeout) {
+      clearTimeout(pendingSpeechTimeout);
+      pendingSpeechTimeout = null;
+    }
     speak(speechText, null, function() {
       if (typeof onCompleteCallback === 'function') {
         onCompleteCallback();
@@ -204,12 +211,15 @@ function playAnimalSound(animalId, speechText, onCompleteCallback) {
     });
   }
 
-  // When real animal audio finishes, speak the animal name smoothly
+  // 2. Strict 3-second limit: speak animal name after 3 seconds at most!
+  pendingSpeechTimeout = setTimeout(speakName, 3000);
+
+  // When real animal audio finishes naturally, speak animal name immediately
   audio.onended = function() {
-    pendingSpeechTimeout = setTimeout(speakName, 250);
+    speakName();
   };
 
-  // If audio fails to play/load, fallback to speaking the animal name immediately
+  // If audio fails to play/load, fallback to speaking animal name immediately
   audio.onerror = function() {
     speakName();
   };
