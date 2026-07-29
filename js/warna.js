@@ -59,16 +59,14 @@ function handleColorClick(cardEl, color) {
     <div class="color-circle-large" style="background-color: ${color.hex}"></div>
     <div class="modal-title">${color.name}</div>
     ${objectHTML}
-    <div class="modal-hint">🔊 Tekan untuk tutup</div>
+    <div class="modal-hint">👆 Ketuk layar untuk menutup</div>
   `);
 
   // 2. Show background color splash effect
   showColorSplash(color.hex);
 
-  // 3. Speak color name. Automatically closes pop-up modal when speech finishes!
-  speak(color.sound, null, function() {
-    hideModal();
-  });
+  // 3. Speak color name clearly (Pop-up stays open until toddler clicks it!)
+  speak(color.sound);
 }
 
 function showColorSplash(hex) {
