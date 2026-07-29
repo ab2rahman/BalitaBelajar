@@ -45,10 +45,20 @@ function renderCards() {
 }
 
 function handleColorClick(cardEl, color) {
-  // 1. Show Pop-Up Modal with giant glowing color circle + name
+  // 1. Build modal content: color circle + realistic object image
+  var objectHTML = '';
+  if (color.objectImage) {
+    objectHTML = `
+      <img src="${color.objectImage}" alt="${color.objectLabel || color.name}" class="color-object-img"
+           onerror="this.style.display='none'">
+      <div class="color-object-label">${color.objectLabel || ''}</div>
+    `;
+  }
+
   showModalHTML(`
     <div class="color-circle-large" style="background-color: ${color.hex}"></div>
     <div class="modal-title">${color.name}</div>
+    ${objectHTML}
     <div class="modal-hint">🔊 Tekan untuk tutup</div>
   `);
 

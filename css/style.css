@@ -665,6 +665,24 @@ body {
   text-shadow: 0 2px 6px rgba(0,0,0,0.5);
 }
 
+.color-object-img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  margin-top: 12px;
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.4));
+  border-radius: 16px;
+  animation: bounce 1.2s infinite ease-in-out;
+}
+
+.color-object-label {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 3px 10px rgba(0,0,0,0.5);
+  margin-top: 6px;
+}
+
 /* ── Disable animations for users who prefer reduced motion ── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
