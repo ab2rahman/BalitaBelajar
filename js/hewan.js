@@ -1,6 +1,6 @@
 /**
  * Balita Belajar - Animal Flashcard & Real MP4 Video Logic
- * Renders animal cards and handles real 5-second MP4 video playback & environment stages
+ * Renders animal cards and handles 5-second video playback (clean player without environment overlays)
  */
 
 function renderCards() {
@@ -46,20 +46,7 @@ function renderCards() {
   });
 }
 
-function getEnvironmentTheme(animalId) {
-  var water = ['lumba_lumba', 'bebek', 'katak'];
-  var jungle = ['singa', 'harimau', 'gajah', 'jerapah', 'monyet', 'serigala', 'beruang', 'panda'];
-  var sky = ['burung', 'burung_hantu', 'ayam'];
-  
-  if (water.indexOf(animalId) !== -1) return 'env-ocean';
-  if (jungle.indexOf(animalId) !== -1) return 'env-jungle';
-  if (sky.indexOf(animalId) !== -1) return 'env-sky';
-  return 'env-garden';
-}
-
 function handleAnimalClick(cardEl, animal) {
-  var envClass = getEnvironmentTheme(animal.id);
-
   var mediaHTML = '';
   if (animal.video) {
     mediaHTML = `
@@ -74,10 +61,9 @@ function handleAnimalClick(cardEl, animal) {
     `;
   }
 
-  // Show Pop-Up Modal with 5-second video container & play button (no auto-close)
+  // Show Pop-Up Modal with clean video container & play button (no auto-close)
   showModalHTML(`
-    <div class="video-container ${envClass}" id="video-box-${animal.id}">
-      <div class="video-environment-bg"></div>
+    <div class="video-container" id="video-box-${animal.id}">
       <div class="video-stage">
         ${mediaHTML}
       </div>

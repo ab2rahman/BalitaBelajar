@@ -696,77 +696,7 @@ body {
   border: 6px solid #FFFFFF;
   box-shadow: 0 18px 40px rgba(0,0,0,0.45);
   overflow: hidden;
-  background: #87CEEB;
-}
-
-.video-environment-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  background-size: cover;
-  background-position: center;
-  transition: transform 5s linear;
-}
-
-/* Environment Themes */
-.env-garden {
-  background: linear-gradient(180deg, #A0E7E5 0%, #B4F8C8 60%, #7BC67E 100%);
-}
-.env-garden .video-environment-bg::after {
-  content: '🏡 🌸 🦋 🌿 🌾 🌻';
-  position: absolute;
-  bottom: 8px;
-  left: 0;
-  width: 100%;
-  font-size: 1.6rem;
-  text-align: center;
-  letter-spacing: 6px;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
-
-.env-jungle {
-  background: linear-gradient(180deg, #FFE5B4 0%, #FBE7C6 50%, #52B788 100%);
-}
-.env-jungle .video-environment-bg::after {
-  content: '🌴 🦁 🌾 🌅 🌿 🍃';
-  position: absolute;
-  bottom: 8px;
-  left: 0;
-  width: 100%;
-  font-size: 1.6rem;
-  text-align: center;
-  letter-spacing: 6px;
-}
-
-.env-ocean {
-  background: linear-gradient(180deg, #90E0EF 0%, #00B4D8 50%, #0077B6 100%);
-}
-.env-ocean .video-environment-bg::after {
-  content: '🌊 🐬 🫧 🪸 🐚 ⛵';
-  position: absolute;
-  bottom: 8px;
-  left: 0;
-  width: 100%;
-  font-size: 1.6rem;
-  text-align: center;
-  letter-spacing: 6px;
-}
-
-.env-sky {
-  background: linear-gradient(180deg, #72EFDD 0%, #64DFDF 50%, #48CAE4 100%);
-}
-.env-sky .video-environment-bg::after {
-  content: '☁️ 🌈 🕊️ ☀️ 🌤️ 🌻';
-  position: absolute;
-  bottom: 8px;
-  left: 0;
-  width: 100%;
-  font-size: 1.6rem;
-  text-align: center;
-  letter-spacing: 6px;
+  background: #000000;
 }
 
 .video-stage {
@@ -780,20 +710,16 @@ body {
 }
 
 .animal-video-img {
-  width: 88%;
-  height: 88%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 24px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
   transition: transform 0.4s ease;
 }
 
 .real-animal-video {
-  width: 90%;
-  height: 90%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 24px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
   display: none;
 }
 
