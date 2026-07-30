@@ -60,7 +60,7 @@ function handleAnimalClick(cardEl, animal) {
     `;
   }
 
-  // Show Pop-Up Modal with looping video container and Replay Sound button
+  // Show Pop-Up Modal with looping video container (auto-closes after 7 seconds)
   showModalHTML(`
     <div class="video-container" id="video-box-${animal.id}">
       <div class="video-stage">
@@ -69,11 +69,6 @@ function handleAnimalClick(cardEl, animal) {
     </div>
 
     <div class="modal-title">${animal.name}</div>
-
-    <button id="replay-sound-btn" class="replay-sound-btn">
-      🔊 Putar Ulang Suara
-    </button>
-
     <div class="modal-hint">👆 Ketuk di luar untuk menutup</div>
   `);
 
@@ -84,15 +79,6 @@ function handleAnimalClick(cardEl, animal) {
     realVideo.currentTime = 0;
     realVideo.play().catch(function(err) {
       console.log('Video play error:', err);
-    });
-  }
-
-  // Attach event listener for Replay Sound button
-  var replayBtn = document.getElementById('replay-sound-btn');
-  if (replayBtn) {
-    replayBtn.addEventListener('click', function(e) {
-      e.stopPropagation(); // Prevent closing modal when clicking replay
-      playAnimalSound(animal.id, animal.sound);
     });
   }
 

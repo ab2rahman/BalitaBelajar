@@ -8,6 +8,7 @@
 
 var currentAudio = null;
 var pendingSpeechTimeout = null;
+var modalAutoCloseTimeout = null;
 var modalEl = null;
 var transparentImageCache = {};
 
@@ -114,13 +115,29 @@ function getOrCreateModal() {
 }
 
 function showModalHTML(htmlContent) {
+  // Clear any existing 7-second auto-close timer
+  if (modalAutoCloseTimeout) {
+    clearTimeout(modalAutoCloseTimeout);
+    modalAutoCloseTimeout = null;
+  }
+
   var modal = getOrCreateModal();
   var body = document.getElementById('modal-body');
   if (body) body.innerHTML = htmlContent;
   modal.style.display = 'flex';
+
+  // Automatically close pop-up modal after 7 seconds from when it was opened!
+  modalAutoCloseTimeout = setTimeout(function() {
+    hideModal();
+  }, 7000);
 }
 
 function hideModal() {
+  // Clear 7-second auto-close timer on close
+  if (modalAutoCloseTimeout) {
+    clearTimeout(modalAutoCloseTimeout);
+    modalAutoCloseTimeout = null;
+  }
   stopAllAudioAndSpeech();
   if (modalEl) {
     modalEl.style.display = 'none';
