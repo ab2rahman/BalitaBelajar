@@ -59,8 +59,8 @@ function handleAlphabetClick(cardEl, item) {
     <div class="modal-hint">👆 Ketuk layar untuk menutup</div>
   `);
 
-  // Speak format e.g. "Huruf A... A... Apel"
-  var speechText = item.sound || ("Huruf " + item.letter + "... " + item.letter + "... " + item.word);
+  // Speak format e.g. "Huruf A, Apel"
+  var speechText = item.sound || ("Huruf " + item.letter + ", " + item.word);
   speak(speechText);
 }
 
