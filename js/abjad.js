@@ -37,31 +37,33 @@ function renderCards() {
     card.appendChild(word);
 
     card.addEventListener('click', function() {
-      handleAlphabetClick(card, item);
+      var alphabet = t.alphabet_data;
+      showFlashcardDeck(
+        alphabet,
+        index,
+        function(let) {
+          var objectHTML = '';
+          if (let.image) {
+            objectHTML = `
+              <img src="${let.image}" alt="${let.word}" class="alphabet-object-img" onerror="this.style.display='none'">
+            `;
+          }
+          return `
+            <div class="letter-circle-large" style="background-color: ${let.color || '#4D96FF'}">${let.letter}</div>
+            <div class="modal-title alphabet-highlight-title">${let.boldWord || let.word}</div>
+            ${objectHTML}
+            <div class="modal-hint">👆 Ketuk layar untuk menutup</div>
+          `;
+        },
+        function(let) {
+          var speechText = let.sound || ("Huruf " + let.letter + ", " + let.word);
+          speak(speechText);
+        }
+      );
     });
 
     grid.appendChild(card);
   });
-}
-
-function handleAlphabetClick(cardEl, item) {
-  var objectHTML = '';
-  if (item.image) {
-    objectHTML = `
-      <img src="${item.image}" alt="${item.word}" class="alphabet-object-img" onerror="this.style.display='none'">
-    `;
-  }
-
-  showModalHTML(`
-    <div class="letter-circle-large" style="background-color: ${item.color || '#4D96FF'}">${item.letter}</div>
-    <div class="modal-title alphabet-highlight-title">${item.boldWord || item.word}</div>
-    ${objectHTML}
-    <div class="modal-hint">👆 Ketuk layar untuk menutup</div>
-  `);
-
-  // Speak format e.g. "Huruf A, Apel"
-  var speechText = item.sound || ("Huruf " + item.letter + ", " + item.word);
-  speak(speechText);
 }
 
 // Initialize on page load

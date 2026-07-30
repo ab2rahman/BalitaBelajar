@@ -39,51 +39,49 @@ function renderCards() {
 
     // Click handler
     card.addEventListener('click', function() {
-      handleAnimalClick(card, animal);
+      var animals = t.animals_data;
+      showFlashcardDeck(
+        animals,
+        index,
+        function(anim) {
+          var mediaHTML = '';
+          if (anim.video) {
+            mediaHTML = `
+              <video id="real-video-${anim.id}" class="real-animal-video" autoplay loop muted playsinline>
+                <source src="${anim.video}" type="video/mp4">
+              </video>
+            `;
+          } else {
+            mediaHTML = `
+              <img src="${anim.image}" alt="${anim.name}" class="animal-video-img" id="animal-img-${anim.id}">
+            `;
+          }
+          return `
+            <div class="video-container" id="video-box-${anim.id}">
+              <div class="video-stage">
+                ${mediaHTML}
+              </div>
+            </div>
+            <div class="modal-title">${anim.name}</div>
+            <div class="modal-hint">👆 Ketuk layar untuk menutup</div>
+          `;
+        },
+        function(anim) {
+          var realVideo = document.getElementById('real-video-' + anim.id);
+          if (realVideo) {
+            realVideo.style.display = 'block';
+            realVideo.currentTime = 0;
+            realVideo.play().catch(function(err) {
+              console.log('Video play error:', err);
+            });
+          }
+          playAnimalSound(anim.id, anim.sound);
+        }
+      );
     });
 
     grid.appendChild(card);
   });
-}
-
-function handleAnimalClick(cardEl, animal) {
-  var mediaHTML = '';
-  if (animal.video) {
-    mediaHTML = `
-      <video id="real-video-${animal.id}" class="real-animal-video" autoplay loop muted playsinline>
-        <source src="${animal.video}" type="video/mp4">
-      </video>
-    `;
-  } else {
-    mediaHTML = `
-      <img src="${animal.image}" alt="${animal.name}" class="animal-video-img" id="animal-img-${animal.id}">
-    `;
-  }
-
-  // Show Pop-Up Modal with looping video container (auto-closes after 7 seconds)
-  showModalHTML(`
-    <div class="video-container" id="video-box-${animal.id}">
-      <div class="video-stage">
-        ${mediaHTML}
-      </div>
-    </div>
-
-    <div class="modal-title">${animal.name}</div>
-    <div class="modal-hint">👆 Ketuk di luar untuk menutup</div>
-  `);
-
-  // Ensure video plays continuously on loop if present
-  var realVideo = document.getElementById('real-video-' + animal.id);
-  if (realVideo) {
-    realVideo.style.display = 'block';
-    realVideo.currentTime = 0;
-    realVideo.play().catch(function(err) {
-      console.log('Video play error:', err);
-    });
-  }
-
-  // Play real audio sound & speech
-  playAnimalSound(animal.id, animal.sound);
 }
 
 // Initialize on page load

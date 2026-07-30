@@ -32,22 +32,25 @@ function renderCards() {
     card.appendChild(numberBadge);
 
     card.addEventListener('click', function() {
-      handleNumberClick(card, num);
+      var numbers = t.numbers_data;
+      showFlashcardDeck(
+        numbers,
+        index,
+        function(n) {
+          return `
+            <div class="number-circle-large" style="background-color: ${n.color || '#FF6B6B'}">${n.number}</div>
+            <div class="modal-hint">👆 Ketuk layar untuk menutup</div>
+          `;
+        },
+        function(n) {
+          var speechText = n.soundNumber || n.sound || n.number;
+          speak(speechText);
+        }
+      );
     });
 
     grid.appendChild(card);
   });
-}
-
-function handleNumberClick(cardEl, num) {
-  showModalHTML(`
-    <div class="number-circle-large" style="background-color: ${num.color || '#FF6B6B'}">${num.number}</div>
-    <div class="modal-hint">👆 Ketuk layar untuk menutup</div>
-  `);
-
-  // Speak only the number
-  var speechText = num.soundNumber || num.sound || num.number;
-  speak(speechText);
 }
 
 // Initialize on page load

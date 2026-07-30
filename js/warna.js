@@ -37,36 +37,35 @@ function renderCards() {
 
     // Click handler
     card.addEventListener('click', function() {
-      handleColorClick(card, color);
+      var colors = t.colors_data;
+      showFlashcardDeck(
+        colors,
+        index,
+        function(col) {
+          var objectHTML = '';
+          if (col.objectImage) {
+            objectHTML = `
+              <img src="${col.objectImage}" alt="${col.objectLabel || col.name}" class="color-object-img"
+                   onerror="this.style.display='none'">
+              <div class="color-object-label">${col.objectLabel || ''}</div>
+            `;
+          }
+          return `
+            <div class="color-circle-large" style="background-color: ${col.hex}"></div>
+            <div class="modal-title">${col.name}</div>
+            ${objectHTML}
+            <div class="modal-hint">👆 Ketuk layar untuk menutup</div>
+          `;
+        },
+        function(col) {
+          showColorSplash(col.hex);
+          speak(col.sound);
+        }
+      );
     });
 
     grid.appendChild(card);
   });
-}
-
-function handleColorClick(cardEl, color) {
-  // 1. Build modal content: color circle + realistic object image
-  var objectHTML = '';
-  if (color.objectImage) {
-    objectHTML = `
-      <img src="${color.objectImage}" alt="${color.objectLabel || color.name}" class="color-object-img"
-           onerror="this.style.display='none'">
-      <div class="color-object-label">${color.objectLabel || ''}</div>
-    `;
-  }
-
-  showModalHTML(`
-    <div class="color-circle-large" style="background-color: ${color.hex}"></div>
-    <div class="modal-title">${color.name}</div>
-    ${objectHTML}
-    <div class="modal-hint">👆 Ketuk layar untuk menutup</div>
-  `);
-
-  // 2. Show background color splash effect
-  showColorSplash(color.hex);
-
-  // 3. Speak color name clearly (Pop-up auto closes after 7 seconds)
-  speak(color.sound);
 }
 
 function showColorSplash(hex) {

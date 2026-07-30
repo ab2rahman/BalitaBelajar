@@ -133,7 +133,6 @@ function showModalHTML(htmlContent) {
 }
 
 function hideModal() {
-  // Clear 7-second auto-close timer on close
   if (modalAutoCloseTimeout) {
     clearTimeout(modalAutoCloseTimeout);
     modalAutoCloseTimeout = null;
@@ -142,6 +141,109 @@ function hideModal() {
   if (modalEl) {
     modalEl.style.display = 'none';
   }
+  flashcardDeckState = null;
+}
+
+var flashcardDeckState = null;
+
+/**
+ * Flashcard Deck Carousel System:
+ * Allows toddlers to swipe left/right (or tap Prev/Next arrows)
+ * to navigate between cards in pop-up modal overlay before the 6-second auto-close.
+ * Swiping or clicking arrows resets the 6-second auto-close timer!
+ */
+function showFlashcardDeck(items, startIndex, renderItemHTML, onCardChange) {
+  if (!items || items.length === 0) return;
+
+  var currentIndex = (startIndex >= 0 && startIndex < items.length) ? startIndex : 0;
+
+  flashcardDeckState = {
+    items: items,
+    currentIndex: currentIndex,
+    renderItemHTML: renderItemHTML,
+    onCardChange: onCardChange
+  };
+
+  function updateDeck(newIndex) {
+    if (!flashcardDeckState) return;
+    if (newIndex < 0) {
+      newIndex = flashcardDeckState.items.length - 1; // Wrap around
+    } else if (newIndex >= flashcardDeckState.items.length) {
+      newIndex = 0; // Wrap around
+    }
+
+    flashcardDeckState.currentIndex = newIndex;
+    var currentItem = flashcardDeckState.items[newIndex];
+
+    var modalHTML = `
+      <button class="flashcard-nav-btn flashcard-nav-prev" id="flashcard-prev-btn" aria-label="Sebelumnya">◀</button>
+      <button class="flashcard-nav-btn flashcard-nav-next" id="flashcard-next-btn" aria-label="Berikutnya">▶</button>
+      <div class="flashcard-counter">${newIndex + 1} / ${flashcardDeckState.items.length}</div>
+      <div id="flashcard-card-content" class="flashcard-card-content">
+        ${renderItemHTML(currentItem, newIndex)}
+      </div>
+    `;
+
+    showModalHTML(modalHTML);
+
+    // Attach click listeners for Prev / Next arrows
+    var prevBtn = document.getElementById('flashcard-prev-btn');
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        updateDeck(flashcardDeckState.currentIndex - 1);
+      });
+    }
+
+    var nextBtn = document.getElementById('flashcard-next-btn');
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        updateDeck(flashcardDeckState.currentIndex + 1);
+      });
+    }
+
+    // Trigger audio / video / speech for active card
+    if (typeof onCardChange === 'function') {
+      onCardChange(currentItem, newIndex);
+    }
+  }
+
+  // Initial render
+  updateDeck(currentIndex);
+
+  // Touch Swipe Handler
+  var modal = getOrCreateModal();
+  var touchStartX = 0;
+
+  function handleTouchStart(e) {
+    if (e.touches && e.touches.length > 0) {
+      touchStartX = e.touches[0].clientX;
+    }
+  }
+
+  function handleTouchEnd(e) {
+    if (e.changedTouches && e.changedTouches.length > 0) {
+      var touchEndX = e.changedTouches[0].clientX;
+      var diffX = touchEndX - touchStartX;
+      if (Math.abs(diffX) > 40 && flashcardDeckState) { // Swipe threshold 40px
+        if (diffX < 0) {
+          // Swiped Left -> Next Card
+          updateDeck(flashcardDeckState.currentIndex + 1);
+        } else {
+          // Swiped Right -> Previous Card
+          updateDeck(flashcardDeckState.currentIndex - 1);
+        }
+      }
+    }
+  }
+
+  if (modal._touchStartHandler) modal.removeEventListener('touchstart', modal._touchStartHandler);
+  if (modal._touchEndHandler) modal.removeEventListener('touchend', modal._touchEndHandler);
+  modal._touchStartHandler = handleTouchStart;
+  modal._touchEndHandler = handleTouchEnd;
+  modal.addEventListener('touchstart', handleTouchStart, { passive: true });
+  modal.addEventListener('touchend', handleTouchEnd, { passive: true });
 }
 
 /* ── Language Management ── */
