@@ -115,7 +115,7 @@ function getOrCreateModal() {
 }
 
 function showModalHTML(htmlContent) {
-  // Clear any existing 7-second auto-close timer
+  // Clear any existing 6-second auto-close timer
   if (modalAutoCloseTimeout) {
     clearTimeout(modalAutoCloseTimeout);
     modalAutoCloseTimeout = null;
@@ -126,10 +126,10 @@ function showModalHTML(htmlContent) {
   if (body) body.innerHTML = htmlContent;
   modal.style.display = 'flex';
 
-  // Automatically close pop-up modal after 7 seconds from when it was opened!
+  // Automatically close pop-up modal after 6 seconds from when it was opened!
   modalAutoCloseTimeout = setTimeout(function() {
     hideModal();
-  }, 7000);
+  }, 6000);
 }
 
 function hideModal() {
