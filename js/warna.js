@@ -59,8 +59,20 @@ function handleColorClick(cardEl, color) {
     <div class="color-circle-large" style="background-color: ${color.hex}"></div>
     <div class="modal-title">${color.name}</div>
     ${objectHTML}
+    <button id="replay-sound-btn" class="replay-sound-btn">
+      🔊 Putar Ulang Suara
+    </button>
     <div class="modal-hint">👆 Ketuk layar untuk menutup</div>
   `);
+
+  // Attach event listener for Replay Sound button
+  var replayBtn = document.getElementById('replay-sound-btn');
+  if (replayBtn) {
+    replayBtn.addEventListener('click', function(e) {
+      e.stopPropagation(); // Prevent closing modal when clicking replay
+      speak(color.sound);
+    });
+  }
 
   // 2. Show background color splash effect
   showColorSplash(color.hex);

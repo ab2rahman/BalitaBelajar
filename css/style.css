@@ -686,6 +686,39 @@ body {
   margin-top: 6px;
 }
 
+/* Replay Sound Button */
+.replay-sound-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 1.15rem;
+  font-weight: 800;
+  padding: 12px 24px;
+  border: 3px solid #FFFFFF;
+  border-radius: 50px;
+  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+  cursor: pointer;
+  margin: 14px auto 6px auto;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease, background 0.2s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.replay-sound-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 25px rgba(255, 107, 107, 0.6);
+  background: linear-gradient(135deg, #FF5252, #FF763B);
+}
+
+.replay-sound-btn:active {
+  transform: scale(0.95);
+}
+
+
 /* ── 5-Second Interactive Animal Video Player ── */
 .video-container {
   position: relative;
