@@ -29,12 +29,7 @@ function renderCards() {
     numberBadge.textContent = num.number;
     numberBadge.style.backgroundColor = num.color || '#FF6B6B';
 
-    var label = document.createElement('div');
-    label.className = 'name';
-    label.textContent = num.label;
-
     card.appendChild(numberBadge);
-    card.appendChild(label);
 
     card.addEventListener('click', function() {
       handleNumberClick(card, num);
@@ -48,19 +43,19 @@ function handleNumberClick(cardEl, num) {
   var objectHTML = '';
   if (num.objectImage) {
     objectHTML = `
-      <img src="${num.objectImage}" alt="${num.label}" class="number-object-img" onerror="this.style.display='none'">
+      <img src="${num.objectImage}" alt="Angka ${num.number}" class="number-object-img" onerror="this.style.display='none'">
     `;
   }
 
   showModalHTML(`
     <div class="number-circle-large" style="background-color: ${num.color || '#FF6B6B'}">${num.number}</div>
-    <div class="modal-title">${num.label}</div>
     ${objectHTML}
     <div class="modal-hint">👆 Ketuk layar untuk menutup</div>
   `);
 
-  // Speak number & item (e.g. "Satu, Satu Apel")
-  speak(num.sound || num.label);
+  // Speak only the number
+  var speechText = num.soundNumber || num.sound || num.number;
+  speak(speechText);
 }
 
 // Initialize on page load

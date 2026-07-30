@@ -58,16 +58,16 @@ const TRANSLATIONS = {
     ],
 
     numbers_data: [
-      { number: '1', label: '1 Apel 🍎', color: '#FF6B6B', objectImage: 'images/numbers/1.jpg', sound: 'Satu, Satu Apel' },
-      { number: '2', label: '2 Jeruk 🍊', color: '#FFB347', objectImage: 'images/numbers/2.jpg', sound: 'Dua, Dua Jeruk' },
-      { number: '3', label: '3 Es Krim 🍦', color: '#FFD93D', objectImage: 'images/numbers/3.jpg', sound: 'Tiga, Tiga Es Krim' },
-      { number: '4', label: '4 Cokelat 🍫', color: '#A0522D', objectImage: 'images/numbers/4.jpg', sound: 'Empat, Empat Cokelat' },
-      { number: '5', label: '5 Kereta 🚂', color: '#6BCB77', objectImage: 'images/numbers/5.jpg', sound: 'Lima, Lima Kereta' },
-      { number: '6', label: '6 Balon 🎈', color: '#4D96FF', objectImage: 'images/numbers/6.jpg', sound: 'Enam, Enam Balon' },
-      { number: '7', label: '7 Mobil 🚗', color: '#C084FC', objectImage: 'images/numbers/7.jpg', sound: 'Tujuh, Tujuh Mobil' },
-      { number: '8', label: '8 Bunga 🌸', color: '#F472B6', objectImage: 'images/numbers/8.jpg', sound: 'Delapan, Delapan Bunga' },
-      { number: '9', label: '9 Ikan 🐟', color: '#38BDF8', objectImage: 'images/numbers/9.jpg', sound: 'Sembilan, Sembilan Ikan' },
-      { number: '10', label: '10 Stroberi 🍓', color: '#EF4444', objectImage: 'images/numbers/10.jpg', sound: 'Sepuluh, Sepuluh Stroberi' }
+      { number: '1', color: '#FF6B6B', objectImage: 'images/numbers/1.jpg', sound: 'Satu' },
+      { number: '2', color: '#FFB347', objectImage: 'images/numbers/2.jpg', sound: 'Dua' },
+      { number: '3', color: '#FFD93D', objectImage: 'images/numbers/3.jpg', sound: 'Tiga' },
+      { number: '4', color: '#A0522D', objectImage: 'images/numbers/4.jpg', sound: 'Empat' },
+      { number: '5', color: '#6BCB77', objectImage: 'images/numbers/5.jpg', sound: 'Lima' },
+      { number: '6', color: '#4D96FF', objectImage: 'images/numbers/6.jpg', sound: 'Enam' },
+      { number: '7', color: '#C084FC', objectImage: 'images/numbers/7.jpg', sound: 'Tujuh' },
+      { number: '8', color: '#F472B6', objectImage: 'images/numbers/8.jpg', sound: 'Delapan' },
+      { number: '9', color: '#38BDF8', objectImage: 'images/numbers/9.jpg', sound: 'Sembilan' },
+      { number: '10', color: '#EF4444', objectImage: 'images/numbers/10.jpg', sound: 'Sepuluh' }
     ],
 
     alphabet_data: [
@@ -153,16 +153,16 @@ const TRANSLATIONS = {
     ],
 
     numbers_data: [
-      { number: '1', label: '1 Apple 🍎', color: '#FF6B6B', objectImage: 'images/numbers/1.jpg', sound: 'One, One Apple' },
-      { number: '2', label: '2 Oranges 🍊', color: '#FFB347', objectImage: 'images/numbers/2.jpg', sound: 'Two, Two Oranges' },
-      { number: '3', label: '3 Ice Creams 🍦', color: '#FFD93D', objectImage: 'images/numbers/3.jpg', sound: 'Three, Three Ice Creams' },
-      { number: '4', label: '4 Chocolates 🍫', color: '#A0522D', objectImage: 'images/numbers/4.jpg', sound: 'Four, Four Chocolates' },
-      { number: '5', label: '5 Trains 🚂', color: '#6BCB77', objectImage: 'images/numbers/5.jpg', sound: 'Five, Five Trains' },
-      { number: '6', label: '6 Balloons 🎈', color: '#4D96FF', objectImage: 'images/numbers/6.jpg', sound: 'Six, Six Balloons' },
-      { number: '7', label: '7 Cars 🚗', color: '#C084FC', objectImage: 'images/numbers/7.jpg', sound: 'Seven, Seven Cars' },
-      { number: '8', label: '8 Flowers 🌸', color: '#F472B6', objectImage: 'images/numbers/8.jpg', sound: 'Eight, Eight Flowers' },
-      { number: '9', label: '9 Fish 🐟', color: '#38BDF8', objectImage: 'images/numbers/9.jpg', sound: 'Nine, Nine Fish' },
-      { number: '10', label: '10 Strawberries 🍓', color: '#EF4444', objectImage: 'images/numbers/10.jpg', sound: 'Ten, Ten Strawberries' }
+      { number: '1', color: '#FF6B6B', objectImage: 'images/numbers/1.jpg', sound: 'One' },
+      { number: '2', color: '#FFB347', objectImage: 'images/numbers/2.jpg', sound: 'Two' },
+      { number: '3', color: '#FFD93D', objectImage: 'images/numbers/3.jpg', sound: 'Three' },
+      { number: '4', color: '#A0522D', objectImage: 'images/numbers/4.jpg', sound: 'Four' },
+      { number: '5', color: '#6BCB77', objectImage: 'images/numbers/5.jpg', sound: 'Five' },
+      { number: '6', color: '#4D96FF', objectImage: 'images/numbers/6.jpg', sound: 'Six' },
+      { number: '7', color: '#C084FC', objectImage: 'images/numbers/7.jpg', sound: 'Seven' },
+      { number: '8', color: '#F472B6', objectImage: 'images/numbers/8.jpg', sound: 'Eight' },
+      { number: '9', color: '#38BDF8', objectImage: 'images/numbers/9.jpg', sound: 'Nine' },
+      { number: '10', color: '#EF4444', objectImage: 'images/numbers/10.jpg', sound: 'Ten' }
     ],
 
     alphabet_data: [
@@ -248,16 +248,16 @@ const TRANSLATIONS = {
     ],
 
     numbers_data: [
-      { number: '1', label: '1 تفاحة 🍎', color: '#FF6B6B', objectImage: 'images/numbers/1.jpg', sound: 'واحد، تفاحة واحدة' },
-      { number: '2', label: '2 برتقال 🍊', color: '#FFB347', objectImage: 'images/numbers/2.jpg', sound: 'اثنان، برتقالتان' },
-      { number: '3', label: '3 آيس كريم 🍦', color: '#FFD93D', objectImage: 'images/numbers/3.jpg', sound: 'ثلاثة، ثلاثة آيس كريم' },
-      { number: '4', label: '4 شوكولاتة 🍫', color: '#A0522D', objectImage: 'images/numbers/4.jpg', sound: 'أربعة، أربع شوكولاتة' },
-      { number: '5', label: '5 قطار 🚂', color: '#6BCB77', objectImage: 'images/numbers/5.jpg', sound: 'خمسة، خمسة قطارات' },
-      { number: '6', label: '6 بالون 🎈', color: '#4D96FF', objectImage: 'images/numbers/6.jpg', sound: 'ستة، ستة بالونات' },
-      { number: '7', label: '7 سيارة 🚗', color: '#C084FC', objectImage: 'images/numbers/7.jpg', sound: 'سبعة، سبع سيارات' },
-      { number: '8', label: '8 زهرة 🌸', color: '#F472B6', objectImage: 'images/numbers/8.jpg', sound: 'ثمانية، ثماني زهور' },
-      { number: '9', label: '9 سمكة 🐟', color: '#38BDF8', objectImage: 'images/numbers/9.jpg', sound: 'تسعة، تسع أسماك' },
-      { number: '10', label: '10 فراولة 🍓', color: '#EF4444', objectImage: 'images/numbers/10.jpg', sound: 'عشرة، عشر فراولات' }
+      { number: '1', color: '#FF6B6B', objectImage: 'images/numbers/1.jpg', sound: 'واحد' },
+      { number: '2', color: '#FFB347', objectImage: 'images/numbers/2.jpg', sound: 'اثنان' },
+      { number: '3', color: '#FFD93D', objectImage: 'images/numbers/3.jpg', sound: 'ثلاثة' },
+      { number: '4', color: '#A0522D', objectImage: 'images/numbers/4.jpg', sound: 'أربعة' },
+      { number: '5', color: '#6BCB77', objectImage: 'images/numbers/5.jpg', sound: 'خمسة' },
+      { number: '6', color: '#4D96FF', objectImage: 'images/numbers/6.jpg', sound: 'ستة' },
+      { number: '7', color: '#C084FC', objectImage: 'images/numbers/7.jpg', sound: 'سبعة' },
+      { number: '8', color: '#F472B6', objectImage: 'images/numbers/8.jpg', sound: 'ثمانية' },
+      { number: '9', color: '#38BDF8', objectImage: 'images/numbers/9.jpg', sound: 'تسعة' },
+      { number: '10', color: '#EF4444', objectImage: 'images/numbers/10.jpg', sound: 'عشرة' }
     ],
 
     alphabet_data: [
