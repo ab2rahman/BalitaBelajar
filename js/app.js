@@ -265,7 +265,9 @@ function applyTranslations() {
     'greeting': t.greeting,
     'choose-text': t.choose,
     'btn-animals': t.animals,
-    'btn-colors': t.colors
+    'btn-colors': t.colors,
+    'btn-numbers': t.numbers,
+    'btn-alphabet': t.alphabet
   };
 
   for (var id in mappings) {
@@ -280,6 +282,10 @@ function applyTranslations() {
       pageTitle.textContent = t.animalsTitle;
     } else if (window.location.pathname.indexOf('warna') !== -1) {
       pageTitle.textContent = t.colorsTitle;
+    } else if (window.location.pathname.indexOf('angka') !== -1) {
+      pageTitle.textContent = t.numbersTitle;
+    } else if (window.location.pathname.indexOf('abjad') !== -1) {
+      pageTitle.textContent = t.alphabetTitle;
     }
   }
 

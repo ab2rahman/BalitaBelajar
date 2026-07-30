@@ -1,8 +1,7 @@
 /**
  * Balita Belajar - Translation Data
  * Supports: Indonesian (id), English (en), Arabic (ar)
- * 20 Animal variations with real studio photos (.jpg), 5-second MP4 videos (.mp4), and authentic sounds (.mp3).
- * 10 Color variations with real example objects (.jpg).
+ * 20 Animals, 10 Colors, 10 Numbers, 26 Alphabet letters.
  */
 
 const TRANSLATIONS = {
@@ -11,12 +10,17 @@ const TRANSLATIONS = {
     choose: 'Mau Belajar Apa?',
     animals: '🐾 Belajar Hewan',
     colors: '🎨 Belajar Warna',
+    numbers: '🔢 Belajar Angka',
+    alphabet: '🔤 Belajar Abjad',
     back: '← Kembali',
     langName: 'Indonesia',
     animalsTitle: '🐾 Belajar Hewan',
     colorsTitle: '🎨 Belajar Warna',
+    numbersTitle: '🔢 Belajar Angka',
+    alphabetTitle: '🔤 Belajar Abjad',
     speechLang: 'id-ID',
     flag: '🇮🇩',
+
     animals_data: [
       { id: 'kucing', name: 'Kucing', sound: 'Kucing', image: 'images/kucing.jpg', video: 'videos/kucing.mp4' },
       { id: 'anjing', name: 'Anjing', sound: 'Anjing', image: 'images/anjing.jpg', video: 'videos/anjing.mp4' },
@@ -39,6 +43,7 @@ const TRANSLATIONS = {
       { id: 'serigala', name: 'Serigala', sound: 'Serigala', image: 'images/serigala.jpg', video: 'videos/serigala.mp4' },
       { id: 'burung_hantu', name: 'Burung Hantu', sound: 'Burung Hantu', image: 'images/burung_hantu.jpg', video: 'videos/burung_hantu.mp4' }
     ],
+
     colors_data: [
       { name: 'Merah', hex: '#FF6B6B', sound: 'Warna, Merah', objectImage: 'images/colors/merah.jpg', objectLabel: '🍎 Apel' },
       { name: 'Kuning', hex: '#FFD93D', sound: 'Warna, Kuning', objectImage: 'images/colors/kuning.jpg', objectLabel: '🍌 Pisang' },
@@ -50,6 +55,48 @@ const TRANSLATIONS = {
       { name: 'Cokelat', hex: '#A0522D', sound: 'Warna, Cokelat', objectImage: 'images/colors/cokelat.jpg', objectLabel: '🍫 Cokelat' },
       { name: 'Hitam', hex: '#2B2D42', sound: 'Warna, Hitam', objectImage: 'images/colors/hitam.jpg', objectLabel: '🐱 Kucing Hitam' },
       { name: 'Putih', hex: '#FFFFFF', sound: 'Warna, Putih', objectImage: 'images/colors/putih.jpg', objectLabel: '🐰 Kelinci Putih' }
+    ],
+
+    numbers_data: [
+      { number: '1', label: '1 Apel 🍎', color: '#FF6B6B', objectImage: 'images/numbers/1.jpg', sound: 'Satu, Satu Apel' },
+      { number: '2', label: '2 Jeruk 🍊', color: '#FFB347', objectImage: 'images/numbers/2.jpg', sound: 'Dua, Dua Jeruk' },
+      { number: '3', label: '3 Es Krim 🍦', color: '#FFD93D', objectImage: 'images/numbers/3.jpg', sound: 'Tiga, Tiga Es Krim' },
+      { number: '4', label: '4 Cokelat 🍫', color: '#A0522D', objectImage: 'images/numbers/4.jpg', sound: 'Empat, Empat Cokelat' },
+      { number: '5', label: '5 Kereta 🚂', color: '#6BCB77', objectImage: 'images/numbers/5.jpg', sound: 'Lima, Lima Kereta' },
+      { number: '6', label: '6 Balon 🎈', color: '#4D96FF', objectImage: 'images/numbers/6.jpg', sound: 'Enam, Enam Balon' },
+      { number: '7', label: '7 Mobil 🚗', color: '#C084FC', objectImage: 'images/numbers/7.jpg', sound: 'Tujuh, Tujuh Mobil' },
+      { number: '8', label: '8 Bunga 🌸', color: '#F472B6', objectImage: 'images/numbers/8.jpg', sound: 'Delapan, Delapan Bunga' },
+      { number: '9', label: '9 Ikan 🐟', color: '#38BDF8', objectImage: 'images/numbers/9.jpg', sound: 'Sembilan, Sembilan Ikan' },
+      { number: '10', label: '10 Stroberi 🍓', color: '#EF4444', objectImage: 'images/numbers/10.jpg', sound: 'Sepuluh, Sepuluh Stroberi' }
+    ],
+
+    alphabet_data: [
+      { letter: 'A', word: 'Apel', boldWord: '<b>A</b>pel', image: 'images/alphabet/a.jpg', sound: 'Huruf A... A... Apel' },
+      { letter: 'B', word: 'Bebek', boldWord: '<b>B</b>ebek', image: 'images/alphabet/b.jpg', sound: 'Huruf B... B... Bebek' },
+      { letter: 'C', word: 'Cokelat', boldWord: '<b>C</b>okelat', image: 'images/alphabet/c.jpg', sound: 'Huruf C... C... Cokelat' },
+      { letter: 'D', word: 'Domba', boldWord: '<b>D</b>omba', image: 'images/alphabet/d.jpg', sound: 'Huruf D... D... Domba' },
+      { letter: 'E', word: 'Elang', boldWord: '<b>E</b>lang', image: 'images/alphabet/e.jpg', sound: 'Huruf E... E... Elang' },
+      { letter: 'F', word: 'Foto', boldWord: '<b>F</b>oto', image: 'images/alphabet/f.jpg', sound: 'Huruf F... F... Foto' },
+      { letter: 'G', word: 'Gajah', boldWord: '<b>G</b>ajah', image: 'images/alphabet/g.jpg', sound: 'Huruf G... G... Gajah' },
+      { letter: 'H', word: 'Harimau', boldWord: '<b>H</b>arimau', image: 'images/alphabet/h.jpg', sound: 'Huruf H... H... Harimau' },
+      { letter: 'I', word: 'Ikan', boldWord: '<b>I</b>kan', image: 'images/alphabet/i.jpg', sound: 'Huruf I... I... Ikan' },
+      { letter: 'J', word: 'Jeruk', boldWord: '<b>J</b>eruk', image: 'images/alphabet/j.jpg', sound: 'Huruf J... J... Jeruk' },
+      { letter: 'K', word: 'Kucing', boldWord: '<b>K</b>ucing', image: 'images/alphabet/k.jpg', sound: 'Huruf K... K... Kucing' },
+      { letter: 'L', word: 'Lemon', boldWord: '<b>L</b>emon', image: 'images/alphabet/l.jpg', sound: 'Huruf L... L... Lemon' },
+      { letter: 'M', word: 'Mobil', boldWord: '<b>M</b>obil', image: 'images/alphabet/m.jpg', sound: 'Huruf M... M... Mobil' },
+      { letter: 'N', word: 'Nanas', boldWord: '<b>N</b>anas', image: 'images/alphabet/n.jpg', sound: 'Huruf N... N... Nanas' },
+      { letter: 'O', word: 'Obor', boldWord: '<b>O</b>bor', image: 'images/alphabet/o.jpg', sound: 'Huruf O... O... Obor' },
+      { letter: 'P', word: 'Pisang', boldWord: '<b>P</b>isang', image: 'images/alphabet/p.jpg', sound: 'Huruf P... P... Pisang' },
+      { letter: 'Q', word: 'Quran', boldWord: '<b>Q</b>uran', image: 'images/alphabet/q.jpg', sound: 'Huruf Q... Q... Quran' },
+      { letter: 'R', word: 'Roti', boldWord: '<b>R</b>oti', image: 'images/alphabet/r.jpg', sound: 'Huruf R... R... Roti' },
+      { letter: 'S', word: 'Sapi', boldWord: '<b>S</b>api', image: 'images/alphabet/s.jpg', sound: 'Huruf S... S... Sapi' },
+      { letter: 'T', word: 'Telur', boldWord: '<b>T</b>elur', image: 'images/alphabet/t.jpg', sound: 'Huruf T... T... Telur' },
+      { letter: 'U', word: 'Udang', boldWord: '<b>U</b>dang', image: 'images/alphabet/u.jpg', sound: 'Huruf U... U... Udang' },
+      { letter: 'V', word: 'Vila', boldWord: '<b>V</b>ila', image: 'images/alphabet/v.jpg', sound: 'Huruf V... V... Vila' },
+      { letter: 'W', word: 'Wortel', boldWord: '<b>W</b>ortel', image: 'images/alphabet/w.jpg', sound: 'Huruf W... W... Wortel' },
+      { letter: 'X', word: 'Xilofon', boldWord: '<b>X</b>ilofon', image: 'images/alphabet/x.jpg', sound: 'Huruf X... X... Xilofon' },
+      { letter: 'Y', word: 'Yoyo', boldWord: '<b>Y</b>oyo', image: 'images/alphabet/y.jpg', sound: 'Huruf Y... Y... Yoyo' },
+      { letter: 'Z', word: 'Zebra', boldWord: '<b>Z</b>ebra', image: 'images/alphabet/z.jpg', sound: 'Huruf Z... Z... Zebra' }
     ]
   },
 
@@ -58,12 +105,17 @@ const TRANSLATIONS = {
     choose: 'What Do You Want to Learn?',
     animals: '🐾 Learn Animals',
     colors: '🎨 Learn Colors',
+    numbers: '🔢 Learn Numbers',
+    alphabet: '🔤 Learn Alphabet',
     back: '← Back',
     langName: 'English',
     animalsTitle: '🐾 Learn Animals',
     colorsTitle: '🎨 Learn Colors',
+    numbersTitle: '🔢 Learn Numbers',
+    alphabetTitle: '🔤 Learn Alphabet',
     speechLang: 'en-US',
     flag: '🇬🇧',
+
     animals_data: [
       { id: 'kucing', name: 'Cat', sound: 'Cat', image: 'images/kucing.jpg', video: 'videos/kucing.mp4' },
       { id: 'anjing', name: 'Dog', sound: 'Dog', image: 'images/anjing.jpg', video: 'videos/anjing.mp4' },
@@ -86,6 +138,7 @@ const TRANSLATIONS = {
       { id: 'serigala', name: 'Wolf', sound: 'Wolf', image: 'images/serigala.jpg', video: 'videos/serigala.mp4' },
       { id: 'burung_hantu', name: 'Owl', sound: 'Owl', image: 'images/burung_hantu.jpg', video: 'videos/burung_hantu.mp4' }
     ],
+
     colors_data: [
       { name: 'Red', hex: '#FF6B6B', sound: 'Color, Red', objectImage: 'images/colors/merah.jpg', objectLabel: '🍎 Apple' },
       { name: 'Yellow', hex: '#FFD93D', sound: 'Color, Yellow', objectImage: 'images/colors/kuning.jpg', objectLabel: '🍌 Banana' },
@@ -97,6 +150,48 @@ const TRANSLATIONS = {
       { name: 'Brown', hex: '#A0522D', sound: 'Color, Brown', objectImage: 'images/colors/cokelat.jpg', objectLabel: '🍫 Chocolate' },
       { name: 'Black', hex: '#2B2D42', sound: 'Color, Black', objectImage: 'images/colors/hitam.jpg', objectLabel: '🐱 Black Cat' },
       { name: 'White', hex: '#FFFFFF', sound: 'Color, White', objectImage: 'images/colors/putih.jpg', objectLabel: '🐰 White Rabbit' }
+    ],
+
+    numbers_data: [
+      { number: '1', label: '1 Apple 🍎', color: '#FF6B6B', objectImage: 'images/numbers/1.jpg', sound: 'One, One Apple' },
+      { number: '2', label: '2 Oranges 🍊', color: '#FFB347', objectImage: 'images/numbers/2.jpg', sound: 'Two, Two Oranges' },
+      { number: '3', label: '3 Ice Creams 🍦', color: '#FFD93D', objectImage: 'images/numbers/3.jpg', sound: 'Three, Three Ice Creams' },
+      { number: '4', label: '4 Chocolates 🍫', color: '#A0522D', objectImage: 'images/numbers/4.jpg', sound: 'Four, Four Chocolates' },
+      { number: '5', label: '5 Trains 🚂', color: '#6BCB77', objectImage: 'images/numbers/5.jpg', sound: 'Five, Five Trains' },
+      { number: '6', label: '6 Balloons 🎈', color: '#4D96FF', objectImage: 'images/numbers/6.jpg', sound: 'Six, Six Balloons' },
+      { number: '7', label: '7 Cars 🚗', color: '#C084FC', objectImage: 'images/numbers/7.jpg', sound: 'Seven, Seven Cars' },
+      { number: '8', label: '8 Flowers 🌸', color: '#F472B6', objectImage: 'images/numbers/8.jpg', sound: 'Eight, Eight Flowers' },
+      { number: '9', label: '9 Fish 🐟', color: '#38BDF8', objectImage: 'images/numbers/9.jpg', sound: 'Nine, Nine Fish' },
+      { number: '10', label: '10 Strawberries 🍓', color: '#EF4444', objectImage: 'images/numbers/10.jpg', sound: 'Ten, Ten Strawberries' }
+    ],
+
+    alphabet_data: [
+      { letter: 'A', word: 'Apple', boldWord: '<b>A</b>pple', image: 'images/alphabet/a.jpg', sound: 'Letter A... A... Apple' },
+      { letter: 'B', word: 'Duck', boldWord: '<b>D</b>uck', image: 'images/alphabet/b.jpg', sound: 'Letter B... B... Duck' },
+      { letter: 'C', word: 'Chocolate', boldWord: '<b>C</b>hocolate', image: 'images/alphabet/c.jpg', sound: 'Letter C... C... Chocolate' },
+      { letter: 'D', word: 'Sheep', boldWord: '<b>S</b>heep', image: 'images/alphabet/d.jpg', sound: 'Letter D... D... Sheep' },
+      { letter: 'E', word: 'Eagle', boldWord: '<b>E</b>agle', image: 'images/alphabet/e.jpg', sound: 'Letter E... E... Eagle' },
+      { letter: 'F', word: 'Photo', boldWord: '<b>P</b>hoto', image: 'images/alphabet/f.jpg', sound: 'Letter F... F... Photo' },
+      { letter: 'G', word: 'Elephant', boldWord: '<b>E</b>lephant', image: 'images/alphabet/g.jpg', sound: 'Letter G... G... Elephant' },
+      { letter: 'H', word: 'Tiger', boldWord: '<b>T</b>iger', image: 'images/alphabet/h.jpg', sound: 'Letter H... H... Tiger' },
+      { letter: 'I', word: 'Fish', boldWord: '<b>F</b>ish', image: 'images/alphabet/i.jpg', sound: 'Letter I... I... Fish' },
+      { letter: 'J', word: 'Orange', boldWord: '<b>O</b>range', image: 'images/alphabet/j.jpg', sound: 'Letter J... J... Orange' },
+      { letter: 'K', word: 'Cat', boldWord: '<b>C</b>at', image: 'images/alphabet/k.jpg', sound: 'Letter K... K... Cat' },
+      { letter: 'L', word: 'Lemon', boldWord: '<b>L</b>emon', image: 'images/alphabet/l.jpg', sound: 'Letter L... L... Lemon' },
+      { letter: 'M', word: 'Car', boldWord: '<b>C</b>ar', image: 'images/alphabet/m.jpg', sound: 'Letter M... M... Car' },
+      { letter: 'N', word: 'Pineapple', boldWord: '<b>P</b>ineapple', image: 'images/alphabet/n.jpg', sound: 'Letter N... N... Pineapple' },
+      { letter: 'O', word: 'Torch', boldWord: '<b>T</b>orch', image: 'images/alphabet/o.jpg', sound: 'Letter O... O... Torch' },
+      { letter: 'P', word: 'Banana', boldWord: '<b>B</b>anana', image: 'images/alphabet/p.jpg', sound: 'Letter P... P... Banana' },
+      { letter: 'Q', word: 'Quran', boldWord: '<b>Q</b>uran', image: 'images/alphabet/q.jpg', sound: 'Letter Q... Q... Quran' },
+      { letter: 'R', word: 'Bread', boldWord: '<b>B</b>read', image: 'images/alphabet/r.jpg', sound: 'Letter R... R... Bread' },
+      { letter: 'S', word: 'Cow', boldWord: '<b>C</b>ow', image: 'images/alphabet/s.jpg', sound: 'Letter S... S... Cow' },
+      { letter: 'T', word: 'Egg', boldWord: '<b>E</b>gg', image: 'images/alphabet/t.jpg', sound: 'Letter T... T... Egg' },
+      { letter: 'U', word: 'Shrimp', boldWord: '<b>S</b>hrimp', image: 'images/alphabet/u.jpg', sound: 'Letter U... U... Shrimp' },
+      { letter: 'V', word: 'Villa', boldWord: '<b>V</b>illa', image: 'images/alphabet/v.jpg', sound: 'Letter V... V... Villa' },
+      { letter: 'W', word: 'Carrot', boldWord: '<b>C</b>arrot', image: 'images/alphabet/w.jpg', sound: 'Letter W... W... Carrot' },
+      { letter: 'X', word: 'Xylophone', boldWord: '<b>X</b>ylophone', image: 'images/alphabet/x.jpg', sound: 'Letter X... X... Xylophone' },
+      { letter: 'Y', word: 'Yoyo', boldWord: '<b>Y</b>oyo', image: 'images/alphabet/y.jpg', sound: 'Letter Y... Y... Yoyo' },
+      { letter: 'Z', word: 'Zebra', boldWord: '<b>Z</b>ebra', image: 'images/alphabet/z.jpg', sound: 'Letter Z... Z... Zebra' }
     ]
   },
 
@@ -105,12 +200,17 @@ const TRANSLATIONS = {
     choose: 'ماذا تريد أن تتعلم؟',
     animals: '🐾 تعلم الحيوانات',
     colors: '🎨 تعلم الألوان',
+    numbers: '🔢 تعلم الأرقام',
+    alphabet: '🔤 تعلم الحروف',
     back: 'رجوع →',
     langName: 'العربية',
     animalsTitle: '🐾 تعلم الحيوانات',
     colorsTitle: '🎨 تعلم الألوان',
+    numbersTitle: '🔢 تعلم الأرقام',
+    alphabetTitle: '🔤 تعلم الحروف',
     speechLang: 'ar-SA',
     flag: '🇸🇦',
+
     animals_data: [
       { id: 'kucing', name: 'قطة', sound: 'قطة', image: 'images/kucing.jpg', video: 'videos/kucing.mp4' },
       { id: 'anjing', name: 'كلب', sound: 'كلب', image: 'images/anjing.jpg', video: 'videos/anjing.mp4' },
@@ -133,6 +233,7 @@ const TRANSLATIONS = {
       { id: 'serigala', name: 'ذئب', sound: 'ذئب', image: 'images/serigala.jpg', video: 'videos/serigala.mp4' },
       { id: 'burung_hantu', name: 'بومة', sound: 'بومة', image: 'images/burung_hantu.jpg', video: 'videos/burung_hantu.mp4' }
     ],
+
     colors_data: [
       { name: 'أحمر', hex: '#FF6B6B', sound: 'لون، أحمر', objectImage: 'images/colors/merah.jpg', objectLabel: '🍎 تفاحة' },
       { name: 'أصفر', hex: '#FFD93D', sound: 'لون، أصفر', objectImage: 'images/colors/kuning.jpg', objectLabel: '🍌 موز' },
@@ -144,6 +245,48 @@ const TRANSLATIONS = {
       { name: 'بني', hex: '#A0522D', sound: 'لون، بني', objectImage: 'images/colors/cokelat.jpg', objectLabel: '🍫 شوكولاتة' },
       { name: 'أسود', hex: '#2B2D42', sound: 'لون، أسود', objectImage: 'images/colors/hitam.jpg', objectLabel: '🐱 قط أسود' },
       { name: 'أبيض', hex: '#FFFFFF', sound: 'لون، أبيض', objectImage: 'images/colors/putih.jpg', objectLabel: '🐰 أرنب أبيض' }
+    ],
+
+    numbers_data: [
+      { number: '1', label: '1 تفاحة 🍎', color: '#FF6B6B', objectImage: 'images/numbers/1.jpg', sound: 'واحد، تفاحة واحدة' },
+      { number: '2', label: '2 برتقال 🍊', color: '#FFB347', objectImage: 'images/numbers/2.jpg', sound: 'اثنان، برتقالتان' },
+      { number: '3', label: '3 آيس كريم 🍦', color: '#FFD93D', objectImage: 'images/numbers/3.jpg', sound: 'ثلاثة، ثلاثة آيس كريم' },
+      { number: '4', label: '4 شوكولاتة 🍫', color: '#A0522D', objectImage: 'images/numbers/4.jpg', sound: 'أربعة، أربع شوكولاتة' },
+      { number: '5', label: '5 قطار 🚂', color: '#6BCB77', objectImage: 'images/numbers/5.jpg', sound: 'خمسة، خمسة قطارات' },
+      { number: '6', label: '6 بالون 🎈', color: '#4D96FF', objectImage: 'images/numbers/6.jpg', sound: 'ستة، ستة بالونات' },
+      { number: '7', label: '7 سيارة 🚗', color: '#C084FC', objectImage: 'images/numbers/7.jpg', sound: 'سبعة، سبع سيارات' },
+      { number: '8', label: '8 زهرة 🌸', color: '#F472B6', objectImage: 'images/numbers/8.jpg', sound: 'ثمانية، ثماني زهور' },
+      { number: '9', label: '9 سمكة 🐟', color: '#38BDF8', objectImage: 'images/numbers/9.jpg', sound: 'تسعة، تسع أسماك' },
+      { number: '10', label: '10 فراولة 🍓', color: '#EF4444', objectImage: 'images/numbers/10.jpg', sound: 'عشرة، عشر فراولات' }
+    ],
+
+    alphabet_data: [
+      { letter: 'A', word: 'تفاحة', boldWord: '<b>ت</b>فاحة', image: 'images/alphabet/a.jpg', sound: 'حرف أ... أ... تفاحة' },
+      { letter: 'B', word: 'بطة', boldWord: '<b>ب</b>طة', image: 'images/alphabet/b.jpg', sound: 'حرف ب... ب... بطة' },
+      { letter: 'C', word: 'شوكولاتة', boldWord: '<b>ش</b>وكولاتة', image: 'images/alphabet/c.jpg', sound: 'حرف ش... ش... شوكولاتة' },
+      { letter: 'D', word: 'خروف', boldWord: '<b>خ</b>روف', image: 'images/alphabet/d.jpg', sound: 'حرف خ... خ... خروف' },
+      { letter: 'E', word: 'نسر', boldWord: '<b>ن</b>سر', image: 'images/alphabet/e.jpg', sound: 'حرف ن... ن... نسر' },
+      { letter: 'F', word: 'صورة', boldWord: '<b>ص</b>ورة', image: 'images/alphabet/f.jpg', sound: 'حرف ص... ص... صورة' },
+      { letter: 'G', word: 'فيل', boldWord: '<b>ف</b>يل', image: 'images/alphabet/g.jpg', sound: 'حرف ف... ف... فيل' },
+      { letter: 'H', word: 'نمر', boldWord: '<b>ن</b>مر', image: 'images/alphabet/h.jpg', sound: 'حرف ن... ن... نمر' },
+      { letter: 'I', word: 'سمكة', boldWord: '<b>س</b>مكة', image: 'images/alphabet/i.jpg', sound: 'حرف س... س... سمكة' },
+      { letter: 'J', word: 'برتقال', boldWord: '<b>ب</b>رتقال', image: 'images/alphabet/j.jpg', sound: 'حرف ب... ب... برتقال' },
+      { letter: 'K', word: 'قطة', boldWord: '<b>ق</b>طة', image: 'images/alphabet/k.jpg', sound: 'حرف ق... ق... قطة' },
+      { letter: 'L', word: 'ليمون', boldWord: '<b>ل</b>يمون', image: 'images/alphabet/l.jpg', sound: 'حرف ل... ل... ليمون' },
+      { letter: 'M', word: 'سيارة', boldWord: '<b>س</b>يارة', image: 'images/alphabet/m.jpg', sound: 'حرف س... س... سيارة' },
+      { letter: 'N', word: 'أناناس', boldWord: '<b>أ</b>ناناس', image: 'images/alphabet/n.jpg', sound: 'حرف أ... أ... أناناس' },
+      { letter: 'O', word: 'شعلة', boldWord: '<b>ش</b>علة', image: 'images/alphabet/o.jpg', sound: 'حرف ش... ش... شعلة' },
+      { letter: 'P', word: 'موز', boldWord: '<b>م</b>وز', image: 'images/alphabet/p.jpg', sound: 'حرف م... م... موز' },
+      { letter: 'Q', word: 'قرآن', boldWord: '<b>ق</b>رآن', image: 'images/alphabet/q.jpg', sound: 'حرف ق... ق... قرآن' },
+      { letter: 'R', word: 'خبز', boldWord: '<b>خ</b>بز', image: 'images/alphabet/r.jpg', sound: 'حرف خ... خ... خبز' },
+      { letter: 'S', word: 'بقرة', boldWord: '<b>ب</b>قرة', image: 'images/alphabet/s.jpg', sound: 'حرف ب... ب... بقرة' },
+      { letter: 'T', word: 'بيض', boldWord: '<b>ب</b>يض', image: 'images/alphabet/t.jpg', sound: 'حرف ب... ب... بيض' },
+      { letter: 'U', word: 'جمبري', boldWord: '<b>ج</b>مبري', image: 'images/alphabet/u.jpg', sound: 'حرف ج... ج... جمبري' },
+      { letter: 'V', word: 'فيلا', boldWord: '<b>ف</b>يلا', image: 'images/alphabet/v.jpg', sound: 'حرف ف... ف... فيلا' },
+      { letter: 'W', word: 'جزر', boldWord: '<b>ج</b>زر', image: 'images/alphabet/w.jpg', sound: 'حرف ج... ج... جزر' },
+      { letter: 'X', word: 'إكسيلوفون', boldWord: '<b>إ</b>كسيلوفون', image: 'images/alphabet/x.jpg', sound: 'حرف إ... إ... إكسيلوفون' },
+      { letter: 'Y', word: 'يويو', boldWord: '<b>ي</b>ويو', image: 'images/alphabet/y.jpg', sound: 'حرف ي... ي... يويو' },
+      { letter: 'Z', word: 'حمار وحشي', boldWord: '<b>ح</b>مار وحشي', image: 'images/alphabet/z.jpg', sound: 'حرف ح... ح... حمار وحشي' }
     ]
   }
 };
