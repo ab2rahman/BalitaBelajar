@@ -137,6 +137,10 @@ function hideModal() {
     clearTimeout(modalAutoCloseTimeout);
     modalAutoCloseTimeout = null;
   }
+  if (window._flashcardKeyHandler) {
+    window.removeEventListener('keydown', window._flashcardKeyHandler);
+    window._flashcardKeyHandler = null;
+  }
   stopAllAudioAndSpeech();
   if (modalEl) {
     modalEl.style.display = 'none';
@@ -148,9 +152,9 @@ var flashcardDeckState = null;
 
 /**
  * Flashcard Deck Carousel System:
- * Allows toddlers to swipe left/right (or tap Prev/Next arrows)
- * to navigate between cards in pop-up modal overlay before the 6-second auto-close.
- * Swiping or clicking arrows resets the 6-second auto-close timer!
+ * Renders pop-up modal inside a real Flashcard Frame with padding & borders.
+ * Allows toddlers to swipe left/right, click Prev/Next arrows, OR use Laptop Keyboard Arrow Keys (Left/Right)!
+ * Swiping, clicking arrows, or pressing keyboard keys resets the 6-second auto-close timer!
  */
 function showFlashcardDeck(items, startIndex, renderItemHTML, onCardChange) {
   if (!items || items.length === 0) return;
@@ -176,11 +180,18 @@ function showFlashcardDeck(items, startIndex, renderItemHTML, onCardChange) {
     var currentItem = flashcardDeckState.items[newIndex];
 
     var modalHTML = `
-      <button class="flashcard-nav-btn flashcard-nav-prev" id="flashcard-prev-btn" aria-label="Sebelumnya">◀</button>
-      <button class="flashcard-nav-btn flashcard-nav-next" id="flashcard-next-btn" aria-label="Berikutnya">▶</button>
-      <div class="flashcard-counter">${newIndex + 1} / ${flashcardDeckState.items.length}</div>
-      <div id="flashcard-card-content" class="flashcard-card-content">
-        ${renderItemHTML(currentItem, newIndex)}
+      <div class="flashcard-card-wrapper animate-pop">
+        <button class="flashcard-nav-btn flashcard-nav-prev" id="flashcard-prev-btn" aria-label="Sebelumnya">◀</button>
+        <button class="flashcard-nav-btn flashcard-nav-next" id="flashcard-next-btn" aria-label="Berikutnya">▶</button>
+
+        <div class="flashcard-card-box">
+          <div class="flashcard-header">
+            <div class="flashcard-counter">${newIndex + 1} / ${flashcardDeckState.items.length}</div>
+          </div>
+          <div id="flashcard-card-content" class="flashcard-card-content">
+            ${renderItemHTML(currentItem, newIndex)}
+          </div>
+        </div>
       </div>
     `;
 
@@ -211,6 +222,24 @@ function showFlashcardDeck(items, startIndex, renderItemHTML, onCardChange) {
 
   // Initial render
   updateDeck(currentIndex);
+
+  // Keyboard Arrow Key Handler for Laptop / Desktop
+  function handleKeyDown(e) {
+    if (!flashcardDeckState) return;
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      updateDeck(flashcardDeckState.currentIndex - 1);
+    } else if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      updateDeck(flashcardDeckState.currentIndex + 1);
+    } else if (e.key === 'Escape') {
+      hideModal();
+    }
+  }
+
+  if (window._flashcardKeyHandler) window.removeEventListener('keydown', window._flashcardKeyHandler);
+  window._flashcardKeyHandler = handleKeyDown;
+  window.addEventListener('keydown', handleKeyDown);
 
   // Touch Swipe Handler
   var modal = getOrCreateModal();
