@@ -40,16 +40,8 @@ function renderCards() {
 }
 
 function handleNumberClick(cardEl, num) {
-  var objectHTML = '';
-  if (num.objectImage) {
-    objectHTML = `
-      <img src="${num.objectImage}" alt="Angka ${num.number}" class="number-object-img" onerror="this.style.display='none'">
-    `;
-  }
-
   showModalHTML(`
     <div class="number-circle-large" style="background-color: ${num.color || '#FF6B6B'}">${num.number}</div>
-    ${objectHTML}
     <div class="modal-hint">👆 Ketuk layar untuk menutup</div>
   `);
 
