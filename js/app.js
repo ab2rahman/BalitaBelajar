@@ -282,14 +282,12 @@ function updateLangSwitch() {
   var switchBtn = document.getElementById('lang-switch');
   if (!switchBtn) return;
 
-  var langs = ['id', 'en', 'ar'];
   var flags = { id: '🇮🇩', en: '🇬🇧', ar: '🇸🇦' };
   var current = getLanguage();
-  var nextIdx = (langs.indexOf(current) + 1) % langs.length;
-  var nextLang = langs[nextIdx];
 
-  switchBtn.textContent = flags[nextLang];
-  switchBtn.title = 'Switch to ' + TRANSLATIONS[nextLang].langName;
+  // Display the flag of the CURRENTLY selected language!
+  switchBtn.textContent = flags[current] || '🇮🇩';
+  switchBtn.title = 'Bahasa: ' + (TRANSLATIONS[current] ? TRANSLATIONS[current].langName : 'Indonesia');
 }
 
 function initLangSwitch() {
@@ -301,7 +299,9 @@ function initLangSwitch() {
     var langs = ['id', 'en', 'ar'];
     var current = getLanguage();
     var nextIdx = (langs.indexOf(current) + 1) % langs.length;
-    setLanguage(langs[nextIdx]);
+    var nextLang = langs[nextIdx];
+
+    setLanguage(nextLang);
 
     if (typeof renderCards === 'function') {
       renderCards();
